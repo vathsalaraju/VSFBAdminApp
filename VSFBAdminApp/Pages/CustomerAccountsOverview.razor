@@ -1,0 +1,46 @@
+﻿@page "/CustomerAccountOverview"
+
+<h1 class = "page-title">All Customer Accounts</h1>
+@if(customerAccounts == null)
+{
+    <p><em>Loading Please Wait!</em></p>
+}
+
+else
+{
+    <table class = "table">
+        <thead>
+            <th>Customer Id</th>
+                <th>Account Number</th>
+                <th>Status</th>
+                <th>Action</th>
+        </thead>
+        <tbody>
+            @foreach (var temp in customerAccounts)
+            {
+                <tr>
+                    <td>@temp.CustomerId</td>
+                    <td>@temp.AccountNumber</td>
+                    <td>@temp.Status</td>
+                    @if(temp.Status == "Pending")
+                    {
+                            <td><button class = "btn-primary w-100">Approve</button></td>
+                        }
+                        else
+                        {
+                            <td><button class = "btn-primary w-100" onclick = "showDetails">More Info</button></td>
+                        }
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+}
+
+@code
+{
+    public void showDetails()
+    {
+        
+    }
+}

@@ -1,0 +1,27 @@
+﻿@page "/CustomerAccountDetails/{CustomerId}"
+
+<h1 class = "page-title">All Customer Accounts</h1>
+@if(customerAcc == null)
+{
+    <p><em>Loading Please Wait!</em></p>
+}
+else
+{
+    <table class = "table">
+        <thead>
+            <th>Customer Id</th>
+                <th>Account Number</th>
+                <th>Status</th>
+                
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>@customerAcc.CustomerId</td>
+                    <td>@customerAcc.AccountNumber</td>
+                    <td>@customerAcc.Status</td>
+                    
+                </tr>
+        </tbody>
+    </table>
+    }
