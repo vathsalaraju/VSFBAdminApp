@@ -10,6 +10,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddHttpClient<ICustomerAccountsDataService, CustomerAccountsDataServices>(client => client.BaseAddress = new Uri("https://localhost:7059/"));
+builder.Services.AddHttpClient<ICustomerDataService, CustomerDataService>(client => client.BaseAddress = new Uri("https://localhost:7059/"));
 
 var app = builder.Build();
 

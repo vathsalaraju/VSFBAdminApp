@@ -1,0 +1,120 @@
+﻿@page "/CustomerDetails/{CustomerId}"
+
+<h3>Customer Details for @customer.FirstName @customer.LastName</h3>
+@if(customer == null)
+{
+    <p><em>Loading Data Please Wait...</em></p>
+}
+else
+{
+    <div class="col-10 row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Customer ID</label>
+                <div class="col-sm-8">
+                    <label type="text" class="form-control-plaintext">@customer.CustomerId</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">First name</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.FirstName</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Last name</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.LastName</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Birthdate</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.DateOfBirth</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Email</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.EmailId</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Aadhar Number</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.AadharNumber</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Father's Name</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.FathersName</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Mobile Number</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.MobileNumber</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Permanent Address</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.PermanentAddress</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Residential Address</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.ResidentialAddress</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Enabled Net Banking</label>
+                <div class="col-sm-8">
+
+                    @if (customer.EnableNetBanking == "Yes")
+                    {
+                        <label type="text" readonly class="form-control-plaintext">Yes</label>
+                    }
+                    else
+                    {
+                        <label type="text" readonly class="form-control-plaintext">No</label>
+
+                    }
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Gross Annual Income</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.GrossAnnualIncome</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Occupation Type</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.OccupationType</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Source of Income</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.SourceOfIncome</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+}

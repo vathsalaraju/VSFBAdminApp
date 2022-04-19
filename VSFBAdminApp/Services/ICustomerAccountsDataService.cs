@@ -7,5 +7,7 @@ namespace VSFBAdminApp.Services
     {
         Task<IEnumerable<CustomerAcc>> GetCustomerAccounts();
         Task<CustomerAcc> GetCustomerAccountsById(string id);
+        Task UpdateCustomerAccount(string id,CustomerAcc data);
+       
     }
 }

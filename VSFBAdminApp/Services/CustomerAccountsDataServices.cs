@@ -28,8 +28,12 @@ namespace VSFBAdminApp.Services
                     (await _httpClient.GetStreamAsync($"api/customeraccounts/{id}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
             }
 
-
+        public async Task UpdateCustomerAccount(string id,CustomerAcc custAcc)
+        {
+            var customerjson = new StringContent(JsonSerializer.Serialize(custAcc), Encoding.UTF8, "application/json");
+            await _httpClient.PutAsync("api/customeraccounts/{id}", customerjson);
         }
     }
+}
 
 

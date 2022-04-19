@@ -22,14 +22,15 @@ else
                     <td>@temp.CustomerId</td>
                     <td>@temp.AccountNumber</td>
                     <td>@temp.Status</td>
-                    @if(temp.Status == "Pending")
-                    {
-                            <td><button class = "btn-primary w-100">Approve</button></td>
-                        }
-                        else
-                        {
-                            <td><button class = "btn-primary w-100" onclick = "showDetails">More Info</button></td>
-                        }
+                   
+<td>
+                            <a href = "@($"CustomerAccountEdit/{temp.CustomerId}")" class = "btn btn-primary w-60">Change status</a>
+                            </td>
+                   
+                            <td>
+                            <a href = "@($"CustomerDetails/{temp.CustomerId}")" class = "btn btn-primary w-60">More Info</a>
+                            </td>
+                        
                 </tr>
             }
             
@@ -37,10 +38,3 @@ else
     </table>
 }
 
-@code
-{
-    public void showDetails()
-    {
-        
-    }
-}

@@ -1,0 +1,31 @@
+﻿
+@page "/customerAccountEdit/{CustomerId}"
+
+<h3>CustomerAccountEdit</h3>
+<div class = "container">
+    <h1 class = "page-title">Details for @customerAcc.CustomerId</h1>
+    <EditForm Model = "@customerAcc" OnSubmit = "@UpdateData">
+        <div class = "form-group row">
+            <label for = "CustomerId" class = "col-sm-3">Customer Id</label>
+            <InputText id = "CustomerId" class = "form-control" @bind-Value = "@customerAcc.CustomerId"></InputText>
+        </div>
+
+        <div class = "form-group row">
+            <label for = "AccountNumber" class = "col-sm-3">Account Number</label>
+            <InputNumber id = "AccountNumber" class = "form-control" @bind-Value = "@customerAcc.AccountNumber"></InputNumber>
+
+        </div>
+
+        <div class = "form-group row">
+            <label for = "Status" class = "col-sm-3">Status</label>
+            <InputSelect @bind-Value = "@customerAcc.Status">
+                <option value="Approve" >Approve</option>
+  <option value="Reject">Reject</option>
+  <option value="Suspended">Suspended</option>
+            </InputSelect>
+        </div>
+        <button type = "submit" class = "btn btn-primary edit-btn">Save Changes</button>
+    </EditForm>
+
+</div>
+

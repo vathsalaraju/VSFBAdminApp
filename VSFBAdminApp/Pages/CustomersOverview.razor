@@ -1,0 +1,43 @@
+﻿
+
+@page "/CustomersOverview"
+
+<h2> Customers List </h2>
+
+@if(customers == null)
+{
+    <p><em>Loading Please Wait!</em></p>
+}
+
+else
+{
+    <table class = "table">
+        <thead>
+            <th>CustomerId</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Action</th>
+        </thead>
+        <tbody>
+            @foreach (var temp in customers)
+            {
+                <tr>
+                    <td>@temp.CustomerId</td>
+                    <td>@temp.FirstName</td>
+                    <td>@temp.LastName</td>
+                    <td>
+                        <a class = "btn btn-primary w-60"  href = "@($"CustomerDetails/{temp.CustomerId}")">More Info</a>
+                    </td>
+                    <td>
+                        <a class = "btn btn-primary w-60"  href = "@($"CustomerEditDetails/{temp.CustomerId}")">Edit Info</a>
+                    </td>
+                    <td>
+                        <a class = "btn btn-primary w-60"  href = "@($"DeleteData/{temp.CustomerId}")">Delete </a>
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+}
+
