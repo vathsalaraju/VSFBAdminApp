@@ -35,7 +35,7 @@ namespace VSFBAdminApp.Services
 
         public async Task<IEnumerable<Customer>> GetAllCustomer()
         {
-            var datajson = await _httpClient.GetStreamAsync($"api/Customers");//returns data in stream format
+            var datajson = await _httpClient.GetStreamAsync($"api/Customers"); //returns data in stream format
             var data = await JsonSerializer.DeserializeAsync<IEnumerable<Customer>>(await _httpClient.GetStreamAsync($"api/customers"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
             return data;
@@ -49,8 +49,7 @@ namespace VSFBAdminApp.Services
 
         public async Task UpdateCustomer(string customerId,Customer cust)
         {
-            var customerJson =
-                new StringContent(JsonSerializer.Serialize(cust), Encoding.UTF8, "application/json");
+            var customerJson = new StringContent(JsonSerializer.Serialize(cust), Encoding.UTF8, "application/json");
 
             await _httpClient.PutAsync("api/customers", customerJson);
         }

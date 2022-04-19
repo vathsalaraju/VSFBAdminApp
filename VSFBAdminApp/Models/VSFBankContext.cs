@@ -19,7 +19,7 @@ namespace VSFB.Models
         public virtual DbSet<CustomerAcc> CustomerAccs { get; set; } = null!;
         public virtual DbSet<RegisterNetBanking> RegisterNetBankings { get; set; } = null!;
         public virtual DbSet<TransactionDetail> TransactionDetails { get; set; } = null!;
-        public virtual DbSet<ValidLogin> ValidLogins { get; set; } = null!;
+        //public virtual DbSet<ValidLogin> ValidLogins { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -209,27 +209,27 @@ namespace VSFB.Models
                     .HasConstraintName("fk_AccNum_Tr");
             });
 
-            modelBuilder.Entity<ValidLogin>(entity =>
-            {
-                entity.HasKey(e => e.CustomerId)
-                    .HasName("PK__ValidLog__A4AE64D8262DCD86");
+            //modelBuilder.Entity<ValidLogin>(entity =>
+            //{
+            //    entity.HasKey(e => e.CustomerId)
+            //        .HasName("PK__ValidLog__A4AE64D8262DCD86");
 
-                entity.ToTable("ValidLogin");
+            //    entity.ToTable("ValidLogin");
 
-                entity.Property(e => e.CustomerId)
-                    .HasMaxLength(12)
-                    .IsUnicode(false);
+            //    entity.Property(e => e.CustomerId)
+            //        .HasMaxLength(12)
+            //        .IsUnicode(false);
 
-                entity.Property(e => e.Passwordd)
-                    .HasMaxLength(40)
-                    .IsUnicode(false);
+            //    entity.Property(e => e.Passwordd)
+            //        .HasMaxLength(40)
+            //        .IsUnicode(false);
 
-                entity.HasOne(d => d.Customer)
-                    .WithOne(p => p.ValidLogin)
-                    .HasForeignKey<ValidLogin>(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_Custid");
-            });
+            //    entity.HasOne(d => d.Customer)
+            //        .WithOne(p => p.ValidLogin)
+            //        .HasForeignKey<ValidLogin>(d => d.CustomerId)
+            //        .OnDelete(DeleteBehavior.ClientSetNull)
+            //        .HasConstraintName("fk_Custid");
+            //});
 
             OnModelCreatingPartial(modelBuilder);
         }
