@@ -51,7 +51,8 @@ namespace VSFBAdminApp.Services
         {
             var customerJson = new StringContent(JsonSerializer.Serialize(cust), Encoding.UTF8, "application/json");
 
-            await _httpClient.PutAsync("api/customers", customerJson);
+            await _httpClient.PutAsync($"api/customers/{customerId}", customerJson);
+            
         }
     }
 }
