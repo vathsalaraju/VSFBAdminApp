@@ -21,6 +21,12 @@ else
                     <label type="text" readonly class="form-control-plaintext">@customer.FirstName</label>
                 </div>
             </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Middle name</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@customer.MiddleName</label>
+                </div>
+            </div>
 
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Last name</label>
@@ -82,13 +88,13 @@ else
                 <label class="col-sm-4 col-form-label">Enabled Net Banking</label>
                 <div class="col-sm-8">
 
-                    @if (customer.EnableNetBanking == "Yes")
+                    @if (customer.EnableNetBanking == "YES")
                     {
-                        <label type="text" readonly class="form-control-plaintext">Yes</label>
+                        <label type="text" readonly class="form-control-plaintext">YES</label>
                     }
                     else
                     {
-                        <label type="text" readonly class="form-control-plaintext">No</label>
+                        <label type="text" readonly class="form-control-plaintext">NO</label>
 
                     }
                 </div>
